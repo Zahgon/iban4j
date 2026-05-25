@@ -20,106 +20,88 @@ import org.iban4j.countryrules.CountrySpecificRules;
 
 /**
  * Non-static, reusable IBAN validator with configurable validation options.
- * 
+ *
  * This class provides thread-safe IBAN validation with customizable features
  * such as country-specific rules validation. Instances are immutable and can
  * be reused across multiple validation calls.
- * 
+ *
  * @since 1.0.0
  */
 public final class IbanValidator {
-    
+
     private final ValidationConfig config;
-    
+
     private IbanValidator(Builder builder) {
         this.config = builder.config;
     }
-    
+
     /**
      * Creates a new builder for IbanValidator.
-     * 
+     *
      * @return a new builder instance
      */
     public static Builder builder() {
-        return new Builder();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Validates the given IBAN string according to the configured options.
-     * 
+     *
      * @param iban the IBAN string to validate
      * @throws IbanFormatException if the IBAN is invalid
      * @throws InvalidCheckDigitException if the IBAN has invalid check digit
      * @throws UnsupportedCountryException if the IBAN's country is not supported
      */
-    public void validate(String iban) throws IbanFormatException, 
-            InvalidCheckDigitException, UnsupportedCountryException {
-        // Perform base IBAN validation and get IBAN object
-        Iban ibanObj = Iban.valueOf(iban);
-
-        // Validate country specific rules if enabled by configuration
-        if (!CountrySpecificRules.isValid(ibanObj, config)) {
-            throw new IbanFormatException(
-                    IbanFormatViolation.COUNTRY_RULES_FAILED,
-                    iban,
-                    "Country-specific rules validation failed for " + iban
-            );
-        }
+    public void validate(String iban) throws IbanFormatException, InvalidCheckDigitException, UnsupportedCountryException {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Checks if the given IBAN string is valid according to the configured options.
-     * 
+     *
      * @param iban the IBAN string to validate
      * @return true if the IBAN is valid, false otherwise
      */
     public boolean isValid(String iban) {
-        try {
-            validate(iban);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Builder for IbanValidator.
      */
     public static final class Builder {
+
         private ValidationConfig config = ValidationConfig.builder().build();
 
-        private Builder(){}
-        
+        private Builder() {
+        }
+
         /**
          * Sets the validation config for the validator.
-         * 
+         *
          * @param config the validation config to use
          * @return this builder for method chaining
          */
         public Builder config(ValidationConfig config) {
-            this.config = config != null ? config : ValidationConfig.builder().build();
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
-        
+
         /**
          * Enables country-specific rules validation.
-         * 
+         *
          * @return this builder for method chaining
          */
         public Builder enableCountryRules() {
-            this.config = ValidationConfig.builder()
-                .enableCountryRules(true)
-                .build();
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
-        
+
         /**
          * Builds the IbanValidator instance.
-         * 
+         *
          * @return the configured IbanValidator
          */
         public IbanValidator build() {
-            return new IbanValidator(this);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 }

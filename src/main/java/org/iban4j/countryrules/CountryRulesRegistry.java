@@ -25,57 +25,43 @@ import org.iban4j.countryrules.algorithms.TnNationalCheckDigit;
  */
 public final class CountryRulesRegistry {
 
-  private CountryRulesRegistry() {}
-
-/**
-   * Register algorithm with country specific IBAN validations.
-   * Overrides existing algorithm for that country if any exist
-   * @param algorithm algorithm implementation to register.
-   */
-  public static void register(CountryRulesAlgorithm algorithm) {
-    if (algorithm == null) {
-        return;
+    private CountryRulesRegistry() {
     }
-    Holder.COUNTRY_TO_ALGORITHM.put(algorithm.getCountry(), algorithm);
-  }
 
-/**
-   * Retrieve algorithm with country specific IBAN validations for a given country
-   * @param countryCode which country's algorithm to use
-   * @return algorithm for given country or {@code null} if none is registered
-   */
-  public static CountryRulesAlgorithm get(CountryCode countryCode) {
-    return Holder.COUNTRY_TO_ALGORITHM.get(countryCode);
-  }
-
-/**
-   * Clears all registered algorithms
-   */
-  public static void clear() { Holder.COUNTRY_TO_ALGORITHM.clear(); }
-
-  /**
-   * Using private nested class with static field insures that algorithms are initialized in a thread-safe and lazy manner.
-   */
-  private static class Holder {
-    private static final Map<CountryCode, CountryRulesAlgorithm> COUNTRY_TO_ALGORITHM = new ConcurrentHashMap<>();
-    static {
-      List.of(
-              new BeNationalCheckDigit(),
-              new EsNationalCheckDigit(),
-              new BaNationalCheckDigit(),
-              new FiNationalCheckDigit(),
-              new FrNationalCheckDigit(),
-              new ItNationalCheckDigit(),
-              new MkNationalCheckDigit(),
-              new MeNationalCheckDigit(),
-              new NlNationalCheckDigit(),
-              new NoNationalCheckDigit(),
-              new PtNationalCheckDigit(),
-              new RsNationalCheckDigit(),
-              new SkNationalCheckDigit(),
-              new SiNationalCheckDigit(),
-              new TnNationalCheckDigit()
-      ).forEach(rule -> COUNTRY_TO_ALGORITHM.put(rule.getCountry(), rule));
+    /**
+     * Register algorithm with country specific IBAN validations.
+     * Overrides existing algorithm for that country if any exist
+     * @param algorithm algorithm implementation to register.
+     */
+    public static void register(CountryRulesAlgorithm algorithm) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-  }
+
+    /**
+     * Retrieve algorithm with country specific IBAN validations for a given country
+     * @param countryCode which country's algorithm to use
+     * @return algorithm for given country or {@code null} if none is registered
+     */
+    public static CountryRulesAlgorithm get(CountryCode countryCode) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Clears all registered algorithms
+     */
+    public static void clear() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Using private nested class with static field insures that algorithms are initialized in a thread-safe and lazy manner.
+     */
+    private static class Holder {
+
+        private static final Map<CountryCode, CountryRulesAlgorithm> COUNTRY_TO_ALGORITHM = new ConcurrentHashMap<>();
+
+        static {
+            List.of(new BeNationalCheckDigit(), new EsNationalCheckDigit(), new BaNationalCheckDigit(), new FiNationalCheckDigit(), new FrNationalCheckDigit(), new ItNationalCheckDigit(), new MkNationalCheckDigit(), new MeNationalCheckDigit(), new NlNationalCheckDigit(), new NoNationalCheckDigit(), new PtNationalCheckDigit(), new RsNationalCheckDigit(), new SkNationalCheckDigit(), new SiNationalCheckDigit(), new TnNationalCheckDigit()).forEach(rule -> COUNTRY_TO_ALGORITHM.put(rule.getCountry(), rule));
+        }
+    }
 }

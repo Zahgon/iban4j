@@ -24,181 +24,158 @@ import static org.iban4j.BicFormatException.BicFormatViolation.*;
  */
 public class BicUtil {
 
-  private static final int BIC8_LENGTH = 8;
-  private static final int BIC11_LENGTH = 11;
+    private static final int BIC8_LENGTH = 8;
 
-  private static final int BANK_CODE_INDEX = 0;
-  private static final int BANK_CODE_LENGTH = 4;
-  private static final int COUNTRY_CODE_INDEX = BANK_CODE_INDEX + BANK_CODE_LENGTH;
-  private static final int COUNTRY_CODE_LENGTH = 2;
-  private static final int LOCATION_CODE_INDEX = COUNTRY_CODE_INDEX + COUNTRY_CODE_LENGTH;
-  private static final int LOCATION_CODE_LENGTH = 2;
-  private static final int BRANCH_CODE_INDEX = LOCATION_CODE_INDEX + LOCATION_CODE_LENGTH;
-  private static final int BRANCH_CODE_LENGTH = 3;
+    private static final int BIC11_LENGTH = 11;
 
-  // hidden constructor of utility class
-  private BicUtil() {
-  }
+    private static final int BANK_CODE_INDEX = 0;
 
-  /**
-   * Validates a given Business Identifier Code (BIC) string according to the ISO 9362 standard.
-   * This method performs checks on the BIC's length, character casing, and the format of its
-   * various components (bank code, country code, location code, and optional branch code).
-   *
-   * @param bic The BIC string to be validated. Must not be {@code null} or empty.
-   * @throws BicFormatException If the provided BIC string does not conform to the expected format rules.
-   * Specific violations are indicated by {@link BicFormatException.BicFormatViolation}.
-   * @throws UnsupportedCountryException If the country code embedded in the BIC is not a supported country.
-   */
-  public static void validate(final String bic)
-      throws BicFormatException, UnsupportedCountryException {
-    try {
-      validateEmpty(bic);
-      validateLength(bic);
-      validateCase(bic);
-      validateBankCode(bic);
-      validateCountryCode(bic);
-      validateLocationCode(bic);
+    private static final int BANK_CODE_LENGTH = 4;
 
-      if (hasBranchCode(bic)) {
-        validateBranchCode(bic);
-      }
-    } catch (Iban4jException e) {
-      throw e;
-    } catch (RuntimeException e) {
-      throw new BicFormatException(UNKNOWN, e.getMessage());
-    }
-  }
+    private static final int COUNTRY_CODE_INDEX = BANK_CODE_INDEX + BANK_CODE_LENGTH;
 
-  private static void validateEmpty(final String bic) {
-    if (bic == null) {
-      throw new BicFormatException(BIC_NOT_NULL, "Null can't be a valid Bic.");
+    private static final int COUNTRY_CODE_LENGTH = 2;
+
+    private static final int LOCATION_CODE_INDEX = COUNTRY_CODE_INDEX + COUNTRY_CODE_LENGTH;
+
+    private static final int LOCATION_CODE_LENGTH = 2;
+
+    private static final int BRANCH_CODE_INDEX = LOCATION_CODE_INDEX + LOCATION_CODE_LENGTH;
+
+    private static final int BRANCH_CODE_LENGTH = 3;
+
+    // hidden constructor of utility class
+    private BicUtil() {
     }
 
-    if (bic.length() == 0) {
-      throw new BicFormatException(BIC_NOT_EMPTY, "Empty string can't be a valid Bic.");
-    }
-  }
-
-  private static void validateLength(final String bic) {
-    if (bic.length() != BIC8_LENGTH && bic.length() != BIC11_LENGTH) {
-      throw new BicFormatException(
-          BIC_LENGTH_8_OR_11,
-          String.format("Bic length must be %d or %d", BIC8_LENGTH, BIC11_LENGTH));
-    }
-  }
-
-  private static void validateCase(final String bic) {
-    if (!bic.equals(bic.toUpperCase())) {
-      throw new BicFormatException(
-          BIC_ONLY_UPPER_CASE_LETTERS, "Bic must contain only upper case letters.");
-    }
-  }
-
-  private static void validateBankCode(final String bic) {
-    String bankCode = getBankCode(bic);
-    for (final char ch : bankCode.toCharArray()) {
-      if (!CharacterUtil.isValidAlphanumeric(ch)) {
-        throw new BicFormatException(
-            BANK_CODE_ONLY_ALPHANUMERIC, ch, "Bank code must contain only alphanumeric.");
-      }
-    }
-  }
-
-  private static void validateCountryCode(final String bic) {
-    final String countryCode = getCountryCode(bic);
-    for (int i = 0; i < COUNTRY_CODE_LENGTH; i++) {
-      if (!CharacterUtil.isAsciiUppercaseLetter(countryCode.charAt(i))) {
-        throw new BicFormatException(
-            COUNTRY_CODE_ONLY_UPPER_CASE_LETTERS,
-            countryCode,
-            "Bic country code must contain upper case letters");
-      }
+    /**
+     * Validates a given Business Identifier Code (BIC) string according to the ISO 9362 standard.
+     * This method performs checks on the BIC's length, character casing, and the format of its
+     * various components (bank code, country code, location code, and optional branch code).
+     *
+     * @param bic The BIC string to be validated. Must not be {@code null} or empty.
+     * @throws BicFormatException If the provided BIC string does not conform to the expected format rules.
+     * Specific violations are indicated by {@link BicFormatException.BicFormatViolation}.
+     * @throws UnsupportedCountryException If the country code embedded in the BIC is not a supported country.
+     */
+    public static void validate(final String bic) throws BicFormatException, UnsupportedCountryException {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    if (CountryCode.getByCode(countryCode) == null) {
-      throw new UnsupportedCountryException(countryCode, "Country code is not supported.");
+    private static void validateEmpty(final String bic) {
+        if (bic == null) {
+            throw new BicFormatException(BIC_NOT_NULL, "Null can't be a valid Bic.");
+        }
+        if (bic.length() == 0) {
+            throw new BicFormatException(BIC_NOT_EMPTY, "Empty string can't be a valid Bic.");
+        }
     }
-  }
 
-  private static void validateLocationCode(final String bic) {
-    final String locationCode = getLocationCode(bic);
-    for (char ch : locationCode.toCharArray()) {
-      if (!CharacterUtil.isValidAlphanumeric(ch)) {
-        throw new BicFormatException(
-            LOCATION_CODE_ONLY_LETTERS_OR_DIGITS,
-            ch,
-            "Location code must contain only letters or digits.");
-      }
+    private static void validateLength(final String bic) {
+        if (bic.length() != BIC8_LENGTH && bic.length() != BIC11_LENGTH) {
+            throw new BicFormatException(BIC_LENGTH_8_OR_11, String.format("Bic length must be %d or %d", BIC8_LENGTH, BIC11_LENGTH));
+        }
     }
-  }
 
-  private static void validateBranchCode(final String bic) {
-    final String branchCode = getBranchCode(bic);
-    for (final char ch : branchCode.toCharArray()) {
-      if (!CharacterUtil.isValidAlphanumeric(ch)) {
-        throw new BicFormatException(
-            BRANCH_CODE_ONLY_LETTERS_OR_DIGITS,
-            ch,
-            "Branch code must contain only letters or digits.");
-      }
+    private static void validateCase(final String bic) {
+        if (!bic.equals(bic.toUpperCase())) {
+            throw new BicFormatException(BIC_ONLY_UPPER_CASE_LETTERS, "Bic must contain only upper case letters.");
+        }
     }
-  }
 
-  /**
-   * Extracts the bank code (first 4 characters) from the given BIC string.
-   *
-   * @param bic The BIC string from which to extract the bank code.
-   * @return A {@link String} representing the bank code.
-   */
-  public static String getBankCode(final String bic) {
-    return bic.substring(BANK_CODE_INDEX, BANK_CODE_INDEX + BANK_CODE_LENGTH);
-  }
+    private static void validateBankCode(final String bic) {
+        String bankCode = getBankCode(bic);
+        for (final char ch : bankCode.toCharArray()) {
+            if (!CharacterUtil.isValidAlphanumeric(ch)) {
+                throw new BicFormatException(BANK_CODE_ONLY_ALPHANUMERIC, ch, "Bank code must contain only alphanumeric.");
+            }
+        }
+    }
 
-  /**
-   * Extracts the country code (characters 5 and 6) from the given BIC string.
-   * This code identifies the country where the bank is located.
-   *
-   * @param bic The BIC string from which to extract the country code.
-   * @return A {@link String} representing the two-letter country code.
-   */
-  public static String getCountryCode(final String bic) {
-    return bic.substring(COUNTRY_CODE_INDEX, COUNTRY_CODE_INDEX + COUNTRY_CODE_LENGTH);
-  }
+    private static void validateCountryCode(final String bic) {
+        final String countryCode = getCountryCode(bic);
+        for (int i = 0; i < COUNTRY_CODE_LENGTH; i++) {
+            if (!CharacterUtil.isAsciiUppercaseLetter(countryCode.charAt(i))) {
+                throw new BicFormatException(COUNTRY_CODE_ONLY_UPPER_CASE_LETTERS, countryCode, "Bic country code must contain upper case letters");
+            }
+        }
+        if (CountryCode.getByCode(countryCode) == null) {
+            throw new UnsupportedCountryException(countryCode, "Country code is not supported.");
+        }
+    }
 
-  /**
-   * Extracts the location code (characters 7 and 8) from the given BIC string.
-   * This code identifies the city or location of the bank.
-   *
-   * @param bic The BIC string from which to extract the location code.
-   * @return A {@link String} representing the two-character location code.
-   */
-  public static String getLocationCode(final String bic) {
-    return bic.substring(LOCATION_CODE_INDEX, LOCATION_CODE_INDEX + LOCATION_CODE_LENGTH);
-  }
+    private static void validateLocationCode(final String bic) {
+        final String locationCode = getLocationCode(bic);
+        for (char ch : locationCode.toCharArray()) {
+            if (!CharacterUtil.isValidAlphanumeric(ch)) {
+                throw new BicFormatException(LOCATION_CODE_ONLY_LETTERS_OR_DIGITS, ch, "Location code must contain only letters or digits.");
+            }
+        }
+    }
 
-  /**
-   * Extracts the branch code (characters 9 to 11, if present) from the given BIC string.
-   * This code is optional and identifies a specific branch of the bank.
-   * If the BIC is 8 characters long, this method will return an empty string or throw an exception
-   * depending on the substring behavior for out-of-bounds indices, thus it's typically
-   * used in conjunction with {@link #hasBranchCode(String)}.
-   *
-   * @param bic The BIC string from which to extract the branch code.
-   * @return A {@link String} representing the three-character branch code, or an empty string if not present in an 8-character BIC.
-   */
-  public static String getBranchCode(final String bic) {
-    return bic.substring(BRANCH_CODE_INDEX, BRANCH_CODE_INDEX + BRANCH_CODE_LENGTH);
-  }
+    private static void validateBranchCode(final String bic) {
+        final String branchCode = getBranchCode(bic);
+        for (final char ch : branchCode.toCharArray()) {
+            if (!CharacterUtil.isValidAlphanumeric(ch)) {
+                throw new BicFormatException(BRANCH_CODE_ONLY_LETTERS_OR_DIGITS, ch, "Branch code must contain only letters or digits.");
+            }
+        }
+    }
 
-  /**
-   * Checks if the given BIC string includes an optional branch code.
-   * A BIC has a branch code if its total length is 11 characters.
-   *
-   * @param bic The BIC string to check.
-   * @return {@code true} if the BIC has a branch code (length is 11), {@code false} otherwise (length is 8).
-   */
-  public static boolean hasBranchCode(final String bic) {
-    return bic.length() == BIC11_LENGTH;
-  }
+    /**
+     * Extracts the bank code (first 4 characters) from the given BIC string.
+     *
+     * @param bic The BIC string from which to extract the bank code.
+     * @return A {@link String} representing the bank code.
+     */
+    public static String getBankCode(final String bic) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Extracts the country code (characters 5 and 6) from the given BIC string.
+     * This code identifies the country where the bank is located.
+     *
+     * @param bic The BIC string from which to extract the country code.
+     * @return A {@link String} representing the two-letter country code.
+     */
+    public static String getCountryCode(final String bic) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Extracts the location code (characters 7 and 8) from the given BIC string.
+     * This code identifies the city or location of the bank.
+     *
+     * @param bic The BIC string from which to extract the location code.
+     * @return A {@link String} representing the two-character location code.
+     */
+    public static String getLocationCode(final String bic) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Extracts the branch code (characters 9 to 11, if present) from the given BIC string.
+     * This code is optional and identifies a specific branch of the bank.
+     * If the BIC is 8 characters long, this method will return an empty string or throw an exception
+     * depending on the substring behavior for out-of-bounds indices, thus it's typically
+     * used in conjunction with {@link #hasBranchCode(String)}.
+     *
+     * @param bic The BIC string from which to extract the branch code.
+     * @return A {@link String} representing the three-character branch code, or an empty string if not present in an 8-character BIC.
+     */
+    public static String getBranchCode(final String bic) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    /**
+     * Checks if the given BIC string includes an optional branch code.
+     * A BIC has a branch code if its total length is 11 characters.
+     *
+     * @param bic The BIC string to check.
+     * @return {@code true} if the BIC has a branch code (length is 11), {@code false} otherwise (length is 8).
+     */
+    public static boolean hasBranchCode(final String bic) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

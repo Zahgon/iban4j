@@ -5,16 +5,24 @@ import org.iban4j.Iban;
 import org.iban4j.countryrules.util.Iso7064;
 import org.iban4j.countryrules.CountryRulesAlgorithm;
 
-/** Montenegro: ISO 7064 MOD 97-10 over BBAN. */
+/**
+ * Montenegro: ISO 7064 MOD 97-10 over BBAN.
+ */
 public final class MeNationalCheckDigit implements CountryRulesAlgorithm {
-  /**
-   * Created instance of Montenegro national check digit validator
-   */
-  public MeNationalCheckDigit() {
-  }
 
-  @Override
-  public CountryCode getCountry() { return CountryCode.ME; }
-  @Override
-  public boolean validate(Iban iban) { return Iso7064.mod97_10(iban.getBban()) == 1; }
+    /**
+     * Created instance of Montenegro national check digit validator
+     */
+    public MeNationalCheckDigit() {
+    }
+
+    @Override
+    public CountryCode getCountry() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    @Override
+    public boolean validate(Iban iban) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

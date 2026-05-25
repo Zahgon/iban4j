@@ -10,3 +10,8 @@ iban4j.iml
 
 #Maven
 target
+
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/

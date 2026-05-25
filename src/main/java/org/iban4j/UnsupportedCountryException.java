@@ -23,69 +23,69 @@ package org.iban4j;
  */
 public class UnsupportedCountryException extends Iban4jException {
 
-  private static final long serialVersionUID = -3733353745417164234L;
+    private static final long serialVersionUID = -3733353745417164234L;
 
-  /**
-   * The country code that was requested but is not supported.
-   */
-  private String countryCode;
+    /**
+     * The country code that was requested but is not supported.
+     */
+    private String countryCode;
 
-  /**
-   * Constructs a new {@code UnsupportedCountryException} with no detail message.
-   */
-  public UnsupportedCountryException() {
-    super();
-  }
+    /**
+     * Constructs a new {@code UnsupportedCountryException} with no detail message.
+     */
+    public UnsupportedCountryException() {
+        super();
+    }
 
-  /**
-   * Constructs a new {@code UnsupportedCountryException} with the specified detail message.
-   *
-   * @param s The detail message (which is saved for later retrieval by the {@link Throwable#getMessage()} method).
-   */
-  public UnsupportedCountryException(final String s) {
-    super(s);
-  }
+    /**
+     * Constructs a new {@code UnsupportedCountryException} with the specified detail message.
+     *
+     * @param s The detail message (which is saved for later retrieval by the {@link Throwable#getMessage()} method).
+     */
+    public UnsupportedCountryException(final String s) {
+        super(s);
+    }
 
-  /**
-   * Constructs a new {@code UnsupportedCountryException} with the specified country code and
-   * detail message.
-   *
-   * @param countryCode The two-letter (alpha-2) country code that is not supported.
-   * @param s The detail message.
-   */
-  public UnsupportedCountryException(String countryCode, final String s) {
-    super(s);
-    this.countryCode = countryCode;
-  }
+    /**
+     * Constructs a new {@code UnsupportedCountryException} with the specified country code and
+     * detail message.
+     *
+     * @param countryCode The two-letter (alpha-2) country code that is not supported.
+     * @param s The detail message.
+     */
+    public UnsupportedCountryException(String countryCode, final String s) {
+        super(s);
+        this.countryCode = countryCode;
+    }
 
-  /**
-   * Constructs a new {@code UnsupportedCountryException} with the specified detail message and cause.
-   *
-   * @param s The detail message.
-   * @param t The cause (which is saved for later retrieval by the {@link Throwable#getCause()} method).
-   * (A {@code null} value is permitted, and indicates that the cause is nonexistent or unknown.)
-   */
-  public UnsupportedCountryException(final String s, final Throwable t) {
-    super(s, t);
-  }
+    /**
+     * Constructs a new {@code UnsupportedCountryException} with the specified detail message and cause.
+     *
+     * @param s The detail message.
+     * @param t The cause (which is saved for later retrieval by the {@link Throwable#getCause()} method).
+     * (A {@code null} value is permitted, and indicates that the cause is nonexistent or unknown.)
+     */
+    public UnsupportedCountryException(final String s, final Throwable t) {
+        super(s, t);
+    }
 
-  /**
-   * Constructs a new {@code UnsupportedCountryException} with the specified cause and a detail message
-   * of {@code (cause==null ? null : cause.toString())} (which typically contains the class and detail message of {@code cause}).
-   *
-   * @param t The cause (which is saved for later retrieval by the {@link Throwable#getCause()} method).
-   * (A {@code null} value is permitted, and indicates that the cause is nonexistent or unknown.)
-   */
-  public UnsupportedCountryException(final Throwable t) {
-    super(t);
-  }
+    /**
+     * Constructs a new {@code UnsupportedCountryException} with the specified cause and a detail message
+     * of {@code (cause==null ? null : cause.toString())} (which typically contains the class and detail message of {@code cause}).
+     *
+     * @param t The cause (which is saved for later retrieval by the {@link Throwable#getCause()} method).
+     * (A {@code null} value is permitted, and indicates that the cause is nonexistent or unknown.)
+     */
+    public UnsupportedCountryException(final Throwable t) {
+        super(t);
+    }
 
-  /**
-   * Returns the country code that was deemed unsupported.
-   *
-   * @return A {@link String} representing the unsupported country code.
-   */
-  public String getCountryCode() {
-    return countryCode;
-  }
+    /**
+     * Returns the country code that was deemed unsupported.
+     *
+     * @return A {@link String} representing the unsupported country code.
+     */
+    public String getCountryCode() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

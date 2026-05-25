@@ -6,12 +6,14 @@ package org.iban4j.countryrules;
  */
 @Deprecated(forRemoval = true)
 public final class CountryRulesAlgorithms {
-  private CountryRulesAlgorithms() {}
 
-  /**
-   * Ensures that default country specific rules are registered in {@link CountryRulesRegistry}
-   */
-  public static void ensureInitialized() {
-    // NO op
-  }
+    private CountryRulesAlgorithms() {
+    }
+
+    /**
+     * Ensures that default country specific rules are registered in {@link CountryRulesRegistry}
+     */
+    public static void ensureInitialized() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

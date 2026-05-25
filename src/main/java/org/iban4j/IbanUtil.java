@@ -16,7 +16,6 @@
 package org.iban4j;
 
 import static org.iban4j.IbanFormatException.IbanFormatViolation.*;
-
 import org.iban4j.bban.BbanEntryType;
 import org.iban4j.bban.BbanStructure;
 import org.iban4j.bban.BbanStructureEntry;
@@ -28,13 +27,18 @@ import org.iban4j.countryrules.CountrySpecificRules;
 public final class IbanUtil {
 
     private static final int MOD = 97;
+
     private static final long MAX = 999999999;
 
     private static final int COUNTRY_CODE_INDEX = 0;
+
     private static final int COUNTRY_CODE_LENGTH = 2;
+
     private static final int CHECK_DIGIT_INDEX = COUNTRY_CODE_LENGTH;
-  private static final int CHECK_DIGIT_LENGTH = 2;
-  private static final int BBAN_INDEX = CHECK_DIGIT_INDEX + CHECK_DIGIT_LENGTH;
+
+    private static final int CHECK_DIGIT_LENGTH = 2;
+
+    private static final int BBAN_INDEX = CHECK_DIGIT_INDEX + CHECK_DIGIT_LENGTH;
 
     private IbanUtil() {
     }
@@ -48,12 +52,7 @@ public final class IbanUtil {
      * @return check digit as String
      */
     public static String calculateCheckDigit(final String iban) throws IbanFormatException {
-        final String reformattedIban = replaceCheckDigit(iban,
-                Iban.DEFAULT_CHECK_DIGIT);
-        final int modResult = calculateMod(reformattedIban);
-        final int checkDigitIntValue = (98 - modResult);
-        final String checkDigit = Integer.toString(checkDigitIntValue);
-        return checkDigitIntValue > 9 ? checkDigit : "0" + checkDigit;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -64,24 +63,8 @@ public final class IbanUtil {
      * @throws org.iban4j.InvalidCheckDigitException if iban has invalid check digit.
      * @throws org.iban4j.UnsupportedCountryException if iban's country is not supported.
      */
-    public static void validate(final String iban) throws IbanFormatException,
-            InvalidCheckDigitException, UnsupportedCountryException {
-        try {
-            validateEmpty(iban);
-            validateCountryCode(iban);
-            validateCheckDigitPresence(iban);
-
-            final BbanStructure structure = getBbanStructure(iban);
-
-            validateBbanLength(iban, structure);
-            validateBbanEntries(iban, structure);
-
-            validateCheckDigit(iban);
-        } catch (Iban4jException e) {
-            throw e;
-        } catch (RuntimeException e) {
-            throw new IbanFormatException(UNKNOWN, e.getMessage());
-        }
+    public static void validate(final String iban) throws IbanFormatException, InvalidCheckDigitException, UnsupportedCountryException {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -91,34 +74,23 @@ public final class IbanUtil {
      * @return true if the iban is valid
      */
     public static boolean isValid(final String iban) {
-        try {
-            validate(iban);
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-  /**
-   * Validates iban with optional national check digit validation via {@link ValidationConfig}.
-   *
-   * Behavior:
-   * - Always performs base IBAN validation.
-   * - If config.isEnabled(), validates national check digit using registered algorithms.
-   *
-   * @param iban the IBAN string
-   * @param config validation configuration
-   * @return true if valid (including national check digit when enabled), false otherwise
-   */
-  public static boolean isValid(final String iban, final ValidationConfig config) {
-    try {
-      validate(iban);
-      final Iban ibanObj = Iban.valueOf(iban);
-      return CountrySpecificRules.isValid(ibanObj, config);
-    } catch (Exception e) {
-      return false;
+    /**
+     * Validates iban with optional national check digit validation via {@link ValidationConfig}.
+     *
+     * Behavior:
+     * - Always performs base IBAN validation.
+     * - If config.isEnabled(), validates national check digit using registered algorithms.
+     *
+     * @param iban the IBAN string
+     * @param config validation configuration
+     * @return true if valid (including national check digit when enabled), false otherwise
+     */
+    public static boolean isValid(final String iban, final ValidationConfig config) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-  }
 
     /**
      * Validates iban.
@@ -129,22 +101,8 @@ public final class IbanUtil {
      * @throws org.iban4j.InvalidCheckDigitException if iban has invalid check digit.
      * @throws org.iban4j.UnsupportedCountryException if iban's country is not supported.
      */
-    public static void validate(final String iban, final IbanFormat format) throws IbanFormatException,
-            InvalidCheckDigitException, UnsupportedCountryException {
-        switch (format) {
-            case Default:
-                final String ibanWithoutSpaces = iban.replace(" ", "");
-                validate(ibanWithoutSpaces);
-                if(!toFormattedString(ibanWithoutSpaces).equals(iban)) {
-                    throw new IbanFormatException(IBAN_FORMATTING,
-                            String.format("Iban must be formatted using 4 characters and space combination. " +
-                                    "Instead of [%s]", iban));
-                }
-                break;
-            default:
-                validate(iban);
-                break;
-        }
+    public static void validate(final String iban, final IbanFormat format) throws IbanFormatException, InvalidCheckDigitException, UnsupportedCountryException {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -155,12 +113,7 @@ public final class IbanUtil {
      * @return true if iban is valid
      */
     public static boolean isValid(final String iban, final IbanFormat format) {
-        try{
-            validate(iban, format);
-        }catch (Exception e){
-            return false;
-        }
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -170,7 +123,7 @@ public final class IbanUtil {
      * @return boolean true if country supports iban, false otherwise.
      */
     public static boolean isSupportedCountry(final CountryCode countryCode) {
-        return BbanStructure.forCountry(countryCode) != null;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -180,8 +133,7 @@ public final class IbanUtil {
      * @return the length of the iban for the specified country.
      */
     public static int getIbanLength(final CountryCode countryCode) {
-        final BbanStructure structure = getBbanStructure(countryCode);
-        return COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH + structure.getBbanLength();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -191,8 +143,7 @@ public final class IbanUtil {
      * @return checkDigit String
      */
     public static String getCheckDigit(final String iban) {
-        return iban.substring(CHECK_DIGIT_INDEX,
-                CHECK_DIGIT_INDEX + CHECK_DIGIT_LENGTH);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -202,8 +153,7 @@ public final class IbanUtil {
      * @return countryCode String
      */
     public static String getCountryCode(final String iban) {
-        return iban.substring(COUNTRY_CODE_INDEX,
-                COUNTRY_CODE_INDEX + COUNTRY_CODE_LENGTH);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -213,8 +163,7 @@ public final class IbanUtil {
      * @return countryCodeAndCheckDigit String
      */
     public static String getCountryCodeAndCheckDigit(final String iban) {
-        return iban.substring(COUNTRY_CODE_INDEX,
-                COUNTRY_CODE_INDEX + COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -224,7 +173,7 @@ public final class IbanUtil {
      * @return bban String
      */
     public static String getBban(final String iban) {
-        return iban.substring(BBAN_INDEX);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -234,7 +183,7 @@ public final class IbanUtil {
      * @return accountNumber String
      */
     public static String getAccountNumber(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.account_number);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -244,18 +193,18 @@ public final class IbanUtil {
      * @return bankCode String
      */
     public static String getBankCode(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.bank_code);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-  /**
-   * Returns iban's bank code extension.
-   *
-   * @param iban String
-   * @return bankCodeExt String
-   */
-  public static String getBankCodeExt(final String iban) {
-    return extractBbanEntry(iban, BbanEntryType.bank_code_ext);
-  }
+    /**
+     * Returns iban's bank code extension.
+     *
+     * @param iban String
+     * @return bankCodeExt String
+     */
+    public static String getBankCodeExt(final String iban) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
     /**
      * Returns iban's branch code.
@@ -264,7 +213,7 @@ public final class IbanUtil {
      * @return branchCode String
      */
     static String getBranchCode(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.branch_code);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -274,7 +223,7 @@ public final class IbanUtil {
      * @return nationalCheckDigit String
      */
     static String getNationalCheckDigit(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.national_check_digit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -284,7 +233,7 @@ public final class IbanUtil {
      * @return accountType String
      */
     static String getAccountType(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.account_type);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -294,7 +243,7 @@ public final class IbanUtil {
      * @return ownerAccountType String
      */
     static String getOwnerAccountType(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.owner_account_number);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -304,11 +253,11 @@ public final class IbanUtil {
      * @return identificationNumber String
      */
     static String getIdentificationNumber(final String iban) {
-        return extractBbanEntry(iban, BbanEntryType.identification_number);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static String calculateCheckDigit(final Iban iban) {
-        return calculateCheckDigit(iban.toString());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -318,7 +267,7 @@ public final class IbanUtil {
      * @return The iban without the check digit
      */
     static String replaceCheckDigit(final String iban, final String checkDigit) {
-        return getCountryCode(iban) + checkDigit + getBban(iban);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -327,115 +276,75 @@ public final class IbanUtil {
      * @return A string representing formatted Iban for printing.
      */
     static String toFormattedString(final String iban) {
-        final StringBuilder ibanBuffer = new StringBuilder(iban);
-        final int length = ibanBuffer.length();
-
-        for (int i = 0; i < length / 4; i++) {
-            ibanBuffer.insert((i + 1) * 4 + i, ' ');
-        }
-
-        return ibanBuffer.toString().trim();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static void validateCheckDigit(final String iban) {
         if (calculateMod(iban) != 1) {
             final String checkDigit = getCheckDigit(iban);
             final String expectedCheckDigit = calculateCheckDigit(iban);
-            throw new InvalidCheckDigitException(
-                    checkDigit, expectedCheckDigit,
-                    String.format("[%s] has invalid check digit: %s, " +
-                                    "expected check digit is: %s",
-                            iban, checkDigit, expectedCheckDigit));
+            throw new InvalidCheckDigitException(checkDigit, expectedCheckDigit, String.format("[%s] has invalid check digit: %s, " + "expected check digit is: %s", iban, checkDigit, expectedCheckDigit));
         }
     }
 
     private static void validateEmpty(final String iban) {
-        if(iban == null) {
-            throw new IbanFormatException(IBAN_NOT_NULL,
-                    "Null can't be a valid Iban.");
+        if (iban == null) {
+            throw new IbanFormatException(IBAN_NOT_NULL, "Null can't be a valid Iban.");
         }
-
-        if(iban.length() == 0) {
-            throw new IbanFormatException(IBAN_NOT_EMPTY,
-                    "Empty string can't be a valid Iban.");
+        if (iban.length() == 0) {
+            throw new IbanFormatException(IBAN_NOT_EMPTY, "Empty string can't be a valid Iban.");
         }
     }
 
     private static void validateCountryCode(final String iban) {
         // check if iban contains 2 char country code
-        if(iban.length() < COUNTRY_CODE_LENGTH) {
-            throw new IbanFormatException(COUNTRY_CODE_TWO_LETTERS, iban,
-                    "Iban must contain 2 char country code.");
+        if (iban.length() < COUNTRY_CODE_LENGTH) {
+            throw new IbanFormatException(COUNTRY_CODE_TWO_LETTERS, iban, "Iban must contain 2 char country code.");
         }
-
         final String countryCode = getCountryCode(iban);
-
         // check case sensitivity
-        if(!countryCode.equals(countryCode.toUpperCase()) ||
-            !Character.isLetter(countryCode.charAt(0)) ||
-            !Character.isLetter(countryCode.charAt(1))) {
-            throw new IbanFormatException(COUNTRY_CODE_UPPER_CASE_LETTERS, countryCode,
-                    "Iban country code must contain upper case letters.");
+        if (!countryCode.equals(countryCode.toUpperCase()) || !Character.isLetter(countryCode.charAt(0)) || !Character.isLetter(countryCode.charAt(1))) {
+            throw new IbanFormatException(COUNTRY_CODE_UPPER_CASE_LETTERS, countryCode, "Iban country code must contain upper case letters.");
         }
-
-        if(CountryCode.getByCode(countryCode) == null) {
-            throw new IbanFormatException(COUNTRY_CODE_EXISTS, countryCode,
-                    "Iban contains non existing country code.");
+        if (CountryCode.getByCode(countryCode) == null) {
+            throw new IbanFormatException(COUNTRY_CODE_EXISTS, countryCode, "Iban contains non existing country code.");
         }
-
         // check if country is supported
-        final BbanStructure structure = BbanStructure.forCountry(
-                CountryCode.getByCode(countryCode));
+        final BbanStructure structure = BbanStructure.forCountry(CountryCode.getByCode(countryCode));
         if (structure == null) {
-            throw new UnsupportedCountryException(countryCode,
-                    "Country code is not supported.");
+            throw new UnsupportedCountryException(countryCode, "Country code is not supported.");
         }
     }
 
     private static void validateCheckDigitPresence(final String iban) {
         // check if iban contains 2 digit check digit
-        if(iban.length() < COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH) {
-            throw new IbanFormatException(CHECK_DIGIT_TWO_DIGITS,
-                    iban.substring(COUNTRY_CODE_LENGTH),
-                    "Iban must contain 2 digit check digit.");
+        if (iban.length() < COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH) {
+            throw new IbanFormatException(CHECK_DIGIT_TWO_DIGITS, iban.substring(COUNTRY_CODE_LENGTH), "Iban must contain 2 digit check digit.");
         }
-
         final String checkDigit = getCheckDigit(iban);
-
         // check digits
-        if(!CharacterUtil.isAsciiDigit(checkDigit.charAt(0)) ||
-           !CharacterUtil.isAsciiDigit(checkDigit.charAt(1))) {
-            throw new IbanFormatException(CHECK_DIGIT_ONLY_DIGITS, checkDigit,
-                    "Iban's check digit should contain only digits.");
+        if (!CharacterUtil.isAsciiDigit(checkDigit.charAt(0)) || !CharacterUtil.isAsciiDigit(checkDigit.charAt(1))) {
+            throw new IbanFormatException(CHECK_DIGIT_ONLY_DIGITS, checkDigit, "Iban's check digit should contain only digits.");
         }
     }
 
-    private static void validateBbanLength(final String iban,
-                                           final BbanStructure structure) {
+    private static void validateBbanLength(final String iban, final BbanStructure structure) {
         final int expectedBbanLength = structure.getBbanLength();
         final String bban = getBban(iban);
         final int bbanLength = bban.length();
         if (expectedBbanLength != bbanLength) {
-            throw new IbanFormatException(BBAN_LENGTH,
-                    bbanLength, expectedBbanLength,
-                    String.format("[%s] length is %d, expected BBAN length is: %d",
-                            bban, bbanLength, expectedBbanLength));
+            throw new IbanFormatException(BBAN_LENGTH, bbanLength, expectedBbanLength, String.format("[%s] length is %d, expected BBAN length is: %d", bban, bbanLength, expectedBbanLength));
         }
     }
 
-    private static void validateBbanEntries(final String iban,
-                                            final BbanStructure structure) {
+    private static void validateBbanEntries(final String iban, final BbanStructure structure) {
         final String bban = getBban(iban);
         final CountryCode countryCode = CountryCode.getByCode(getCountryCode(iban));
         int bbanEntryOffset = 0;
-
         for (final BbanStructureEntry entry : structure.getEntries()) {
             final int entryLength = entry.getLength();
-            final String entryValue = bban.substring(bbanEntryOffset,
-                    bbanEntryOffset + entryLength);
-
+            final String entryValue = bban.substring(bbanEntryOffset, bbanEntryOffset + entryLength);
             bbanEntryOffset += entryLength;
-
             BbanStructure.validateBbanEntry(countryCode, entry.getEntryType(), entryValue);
         }
     }
@@ -453,16 +362,12 @@ public final class IbanUtil {
         for (int i = 0; i < reformattedIban.length(); i++) {
             final int numericValue = Character.getNumericValue(reformattedIban.charAt(i));
             if (numericValue < 0 || numericValue > 35) {
-                throw new IbanFormatException(IBAN_VALID_CHARACTERS, null, null,
-                        reformattedIban.charAt(i),
-                        String.format("Invalid Character[%d] = '%d'", i, numericValue));
+                throw new IbanFormatException(IBAN_VALID_CHARACTERS, null, null, reformattedIban.charAt(i), String.format("Invalid Character[%d] = '%d'", i, numericValue));
             }
             total = (numericValue > 9 ? total * 100 : total * 10) + numericValue;
-
             if (total > MAX) {
                 total = (total % MOD);
             }
-
         }
         return (int) (total % MOD);
     }
@@ -480,11 +385,9 @@ public final class IbanUtil {
         final String bban = getBban(iban);
         final BbanStructure structure = getBbanStructure(iban);
         int bbanEntryOffset = 0;
-        for(final BbanStructureEntry entry : structure.getEntries()) {
+        for (final BbanStructureEntry entry : structure.getEntries()) {
             final int entryLength = entry.getLength();
-            final String entryValue = bban.substring(bbanEntryOffset,
-                    bbanEntryOffset + entryLength);
-
+            final String entryValue = bban.substring(bbanEntryOffset, bbanEntryOffset + entryLength);
             bbanEntryOffset = bbanEntryOffset + entryLength;
             if (entry.getEntryType() == entryType) {
                 return entryValue;
@@ -502,39 +405,31 @@ public final class IbanUtil {
      * @return The padded string
      */
     public static String padLeft(String str, int length, char padChar) {
-        if (str.length() >= length)
-            return str;
-        StringBuilder pad = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            pad.append(padChar);
-        }
-        return pad.substring(str.length()) + str;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     // Cached validator for country rules validation
-    private static final IbanValidator COUNTRY_RULES_VALIDATOR = 
-        IbanValidator.builder().enableCountryRules().build();
-    
+    private static final IbanValidator COUNTRY_RULES_VALIDATOR = IbanValidator.builder().enableCountryRules().build();
+
     /**
      * Validates IBAN with country-specific rules enabled.
-     * 
+     *
      * @param iban the IBAN string to validate
      * @throws IbanFormatException if the IBAN is invalid
      * @throws InvalidCheckDigitException if the IBAN has invalid check digit
      * @throws UnsupportedCountryException if the IBAN's country is not supported
      */
-    public static void validateWithCountryRules(String iban) throws IbanFormatException,
-            InvalidCheckDigitException, UnsupportedCountryException {
-        COUNTRY_RULES_VALIDATOR.validate(iban);
+    public static void validateWithCountryRules(String iban) throws IbanFormatException, InvalidCheckDigitException, UnsupportedCountryException {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     /**
      * Checks if IBAN is valid with country-specific rules enabled.
-     * 
+     *
      * @param iban the IBAN string to validate
      * @return true if the IBAN is valid, false otherwise
      */
     public static boolean isValidWithCountryRules(String iban) {
-        return COUNTRY_RULES_VALIDATOR.isValid(iban);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

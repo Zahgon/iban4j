@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.iban4j;
 
 /**
@@ -37,7 +36,7 @@ public final class CharacterUtil {
      * @return {@code true} if {@code ch} is an ASCII digit, otherwise {@code false}
      */
     public static boolean isAsciiDigit(char ch) {
-        return ch >= '0' && ch <= '9';
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -47,7 +46,7 @@ public final class CharacterUtil {
      * @return {@code true} if {@code ch} is an ASCII uppercase latter, otherwise {@code false}
      */
     public static boolean isAsciiUppercaseLetter(char ch) {
-        return ch >= 'A' && ch <= 'Z';
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -57,6 +56,6 @@ public final class CharacterUtil {
      * @return {@code true} if {@code ch} is an ASCII uppercase latter or an ASCII digit, otherwise {@code false}
      */
     public static boolean isValidAlphanumeric(char ch) {
-        return isAsciiUppercaseLetter(ch) || isAsciiDigit(ch);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

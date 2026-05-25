@@ -5,37 +5,24 @@ import org.iban4j.Iban;
 import org.iban4j.countryrules.CountryRulesAlgorithm;
 import org.iban4j.countryrules.util.Iso7064;
 
-/** Belgium: modulus 97 check on bankCode+accountNumber, 00 => 97 rule. */
+/**
+ * Belgium: modulus 97 check on bankCode+accountNumber, 00 => 97 rule.
+ */
 public final class BeNationalCheckDigit implements CountryRulesAlgorithm {
-  /**
-   * Created instance of Belgium national check digit validator
-   */
-  public BeNationalCheckDigit() {
-  }
 
-  @Override
-  public CountryCode getCountry() {
-    return CountryCode.BE;
-  }
-
-  @Override
-  public boolean validate(final Iban iban) {
-    final String bankCode = iban.getBankCode();
-    final String accountNumber = iban.getAccountNumber();
-    final String checkDigits = iban.getNationalCheckDigit();
-
-    if (bankCode == null || accountNumber == null || checkDigits == null) {
-      return false;
+    /**
+     * Created instance of Belgium national check digit validator
+     */
+    public BeNationalCheckDigit() {
     }
-    final String first10 = bankCode + accountNumber;
-    final long remainder = Iso7064.mod97_10(first10);
-    if (remainder < 0) return false;
-    final long expected = (remainder == 0L) ? 97L : remainder;
-    try {
-      final long actual = Long.parseLong(checkDigits);
-      return expected == actual;
-    } catch (NumberFormatException e) {
-      return false;
+
+    @Override
+    public CountryCode getCountry() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-  }
+
+    @Override
+    public boolean validate(final Iban iban) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

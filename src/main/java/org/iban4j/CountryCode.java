@@ -26,505 +26,1006 @@ import java.util.Map;
  */
 public enum CountryCode {
 
-    /** Andorra */
+    /**
+     * Andorra
+     */
     AD("Andorra", "AND"),
-    /** United Arab Emirates */
+    /**
+     * United Arab Emirates
+     */
     AE("United Arab Emirates", "ARE"),
-    /** Afghanistan */
+    /**
+     * Afghanistan
+     */
     AF("Afghanistan", "AFG"),
-    /** Antigua and Barbuda */
+    /**
+     * Antigua and Barbuda
+     */
     AG("Antigua and Barbuda", "ATG"),
-    /** Anguilla */
+    /**
+     * Anguilla
+     */
     AI("Anguilla", "AIA"),
-    /** Albania */
+    /**
+     * Albania
+     */
     AL("Albania", "ALB"),
-    /** Armenia */
+    /**
+     * Armenia
+     */
     AM("Armenia", "ARM"),
-    /** Angola */
+    /**
+     * Angola
+     */
     AO("Angola", "AGO"),
-    /** Antarctica */
+    /**
+     * Antarctica
+     */
     AQ("Antarctica", "ATA"),
-    /** Argentina */
+    /**
+     * Argentina
+     */
     AR("Argentina", "ARG"),
-    /** American Samoa */
+    /**
+     * American Samoa
+     */
     AS("American Samoa", "ASM"),
-    /** Austria */
+    /**
+     * Austria
+     */
     AT("Austria", "AUT"),
-    /** Australia */
+    /**
+     * Australia
+     */
     AU("Australia", "AUS"),
-    /** Aruba */
+    /**
+     * Aruba
+     */
     AW("Aruba", "ABW"),
-    /** Åland Islands */
+    /**
+     * Åland Islands
+     */
     AX("\u212Bland Islands", "ALA"),
-    /** Azerbaijan */
+    /**
+     * Azerbaijan
+     */
     AZ("Azerbaijan", "AZE"),
-    /** Bosnia and Herzegovina */
+    /**
+     * Bosnia and Herzegovina
+     */
     BA("Bosnia and Herzegovina", "BIH"),
-    /** Barbados */
+    /**
+     * Barbados
+     */
     BB("Barbados", "BRB"),
-    /** Bangladesh */
+    /**
+     * Bangladesh
+     */
     BD("Bangladesh", "BGD"),
-    /** Belgium */
+    /**
+     * Belgium
+     */
     BE("Belgium", "BEL"),
-    /** Burkina Faso */
+    /**
+     * Burkina Faso
+     */
     BF("Burkina Faso", "BFA"),
-    /** Bulgaria */
+    /**
+     * Bulgaria
+     */
     BG("Bulgaria", "BGR"),
-    /** Bahrain */
+    /**
+     * Bahrain
+     */
     BH("Bahrain", "BHR"),
-    /** Burundi */
+    /**
+     * Burundi
+     */
     BI("Burundi", "BDI"),
-    /** Benin */
+    /**
+     * Benin
+     */
     BJ("Benin", "BEN"),
-    /** Saint Barthélemy */
+    /**
+     * Saint Barthélemy
+     */
     BL("Saint Barth\u00E9lemy", "BLM"),
-    /** Bermuda */
+    /**
+     * Bermuda
+     */
     BM("Bermuda", "BMU"),
-    /** Brunei Darussalam */
+    /**
+     * Brunei Darussalam
+     */
     BN("Brunei Darussalam", "BRN"),
-    /** Plurinational State of Bolivia */
+    /**
+     * Plurinational State of Bolivia
+     */
     BO("Plurinational State of Bolivia", "BOL"),
-    /** Bonaire, Sint Eustatius and Saba */
+    /**
+     * Bonaire, Sint Eustatius and Saba
+     */
     BQ("Bonaire, Sint Eustatius and Saba", "BES"),
-    /** Brazil */
+    /**
+     * Brazil
+     */
     BR("Brazil", "BRA"),
-    /** Bahamas */
+    /**
+     * Bahamas
+     */
     BS("Bahamas", "BHS"),
-    /** Bhutan */
+    /**
+     * Bhutan
+     */
     BT("Bhutan", "BTN"),
-    /** Bouvet Island */
+    /**
+     * Bouvet Island
+     */
     BV("Bouvet Island", "BVT"),
-    /** Botswana */
+    /**
+     * Botswana
+     */
     BW("Botswana", "BWA"),
-    /** Belarus */
+    /**
+     * Belarus
+     */
     BY("Belarus", "BLR"),
-    /** Belize */
+    /**
+     * Belize
+     */
     BZ("Belize", "BLZ"),
-    /** Canada */
+    /**
+     * Canada
+     */
     CA("Canada", "CAN"),
-    /** Cocos Islands */
+    /**
+     * Cocos Islands
+     */
     CC("Cocos Islands", "CCK"),
-    /** The Democratic Republic of the Congo */
+    /**
+     * The Democratic Republic of the Congo
+     */
     CD("The Democratic Republic of the Congo", "COD"),
-    /** Central African Republic */
+    /**
+     * Central African Republic
+     */
     CF("Central African Republic", "CAF"),
-    /** Congo */
+    /**
+     * Congo
+     */
     CG("Congo", "COG"),
-    /** Switzerland */
+    /**
+     * Switzerland
+     */
     CH("Switzerland", "CHE"),
-    /** Côte d'Ivoire */
+    /**
+     * Côte d'Ivoire
+     */
     CI("C\u00F4te d'Ivoire", "CIV"),
-    /** Cook Islands */
+    /**
+     * Cook Islands
+     */
     CK("Cook Islands", "COK"),
-    /** Chile */
+    /**
+     * Chile
+     */
     CL("Chile", "CHL"),
-    /** Cameroon */
+    /**
+     * Cameroon
+     */
     CM("Cameroon", "CMR"),
-    /** China */
+    /**
+     * China
+     */
     CN("China", "CHN"),
-    /** Colombia */
+    /**
+     * Colombia
+     */
     CO("Colombia", "COL"),
-    /** Costa Rica */
+    /**
+     * Costa Rica
+     */
     CR("Costa Rica", "CRI"),
-    /** Cuba */
+    /**
+     * Cuba
+     */
     CU("Cuba", "CUB"),
-    /** Cape Verde */
+    /**
+     * Cape Verde
+     */
     CV("Cape Verde", "CPV"),
-    /** Curaçao */
+    /**
+     * Curaçao
+     */
     CW("Cura\u00E7ao", "CUW"),
-    /** Christmas Island */
+    /**
+     * Christmas Island
+     */
     CX("Christmas Island", "CXR"),
-    /** Cyprus */
+    /**
+     * Cyprus
+     */
     CY("Cyprus", "CYP"),
-    /** Czech Republic */
+    /**
+     * Czech Republic
+     */
     CZ("Czech Republic", "CZE"),
-    /** Germany */
+    /**
+     * Germany
+     */
     DE("Germany", "DEU"),
-    /** Djibouti */
+    /**
+     * Djibouti
+     */
     DJ("Djibouti", "DJI"),
-    /** Denmark */
+    /**
+     * Denmark
+     */
     DK("Denmark", "DNK"),
-    /** Dominica */
+    /**
+     * Dominica
+     */
     DM("Dominica", "DMA"),
-    /** Dominican Republic */
+    /**
+     * Dominican Republic
+     */
     DO("Dominican Republic", "DOM"),
-    /** Algeria */
+    /**
+     * Algeria
+     */
     DZ("Algeria", "DZA"),
-    /** Ecuador */
+    /**
+     * Ecuador
+     */
     EC("Ecuador", "ECU"),
-    /** Estonia */
+    /**
+     * Estonia
+     */
     EE("Estonia", "EST"),
-    /** Egypt */
+    /**
+     * Egypt
+     */
     EG("Egypt", "EGY"),
-    /** Western Sahara */
+    /**
+     * Western Sahara
+     */
     EH("Western Sahara", "ESH"),
-    /** Eritrea */
+    /**
+     * Eritrea
+     */
     ER("Eritrea", "ERI"),
-    /** Spain */
+    /**
+     * Spain
+     */
     ES("Spain", "ESP"),
-    /** Ethiopia */
+    /**
+     * Ethiopia
+     */
     ET("Ethiopia", "ETH"),
-    /** Finland */
+    /**
+     * Finland
+     */
     FI("Finland", "FIN"),
-    /** Fiji */
+    /**
+     * Fiji
+     */
     FJ("Fiji", "FJI"),
-    /** Falkland Islands */
+    /**
+     * Falkland Islands
+     */
     FK("Falkland Islands", "FLK"),
-    /** Federated States of Micronesia */
+    /**
+     * Federated States of Micronesia
+     */
     FM("Federated States of Micronesia", "FSM"),
-    /** Faroe Islands */
+    /**
+     * Faroe Islands
+     */
     FO("Faroe Islands", "FRO"),
-    /** France */
+    /**
+     * France
+     */
     FR("France", "FRA"),
-    /** Gabon */
+    /**
+     * Gabon
+     */
     GA("Gabon", "GAB"),
-    /** United Kingdom */
+    /**
+     * United Kingdom
+     */
     GB("United Kingdom", "GBR"),
-    /** Grenada */
+    /**
+     * Grenada
+     */
     GD("Grenada", "GRD"),
-    /** Georgia */
+    /**
+     * Georgia
+     */
     GE("Georgia", "GEO"),
-    /** French Guiana */
+    /**
+     * French Guiana
+     */
     GF("French Guiana", "GUF"),
-    /** Guernsey */
+    /**
+     * Guernsey
+     */
     GG("Guernsey", "GGY"),
-    /** Ghana */
+    /**
+     * Ghana
+     */
     GH("Ghana", "GHA"),
-    /** Gibraltar */
+    /**
+     * Gibraltar
+     */
     GI("Gibraltar", "GIB"),
-    /** Greenland */
+    /**
+     * Greenland
+     */
     GL("Greenland", "GRL"),
-    /** Gambia */
+    /**
+     * Gambia
+     */
     GM("Gambia", "GMB"),
-    /** Guinea */
+    /**
+     * Guinea
+     */
     GN("Guinea", "GIN"),
-    /** Guadeloupe */
+    /**
+     * Guadeloupe
+     */
     GP("Guadeloupe", "GLP"),
-    /** Equatorial Guinea */
+    /**
+     * Equatorial Guinea
+     */
     GQ("Equatorial Guinea", "GNQ"),
-    /** Greece */
+    /**
+     * Greece
+     */
     GR("Greece", "GRC"),
-    /** South Georgia and the South Sandwich Islands */
+    /**
+     * South Georgia and the South Sandwich Islands
+     */
     GS("South Georgia and the South Sandwich Islands", "SGS"),
-    /** Guatemala */
+    /**
+     * Guatemala
+     */
     GT("Guatemala", "GTM"),
-    /** Guam */
+    /**
+     * Guam
+     */
     GU("Guam", "GUM"),
-    /** Guinea-Bissau */
+    /**
+     * Guinea-Bissau
+     */
     GW("Guinea-Bissau", "GNB"),
-    /** Guyana */
+    /**
+     * Guyana
+     */
     GY("Guyana", "GUY"),
-    /** Hong Kong */
+    /**
+     * Hong Kong
+     */
     HK("Hong Kong", "HKG"),
-    /** Heard Island and McDonald Islands */
+    /**
+     * Heard Island and McDonald Islands
+     */
     HM("Heard Island and McDonald Islands", "HMD"),
-    /** Honduras */
+    /**
+     * Honduras
+     */
     HN("Honduras", "HND"),
-    /** Croatia */
+    /**
+     * Croatia
+     */
     HR("Croatia", "HRV"),
-    /** Haiti */
+    /**
+     * Haiti
+     */
     HT("Haiti", "HTI"),
-    /** Hungary */
+    /**
+     * Hungary
+     */
     HU("Hungary", "HUN"),
-    /** Indonesia */
+    /**
+     * Indonesia
+     */
     ID("Indonesia", "IDN"),
-    /** Ireland */
+    /**
+     * Ireland
+     */
     IE("Ireland", "IRL"),
-    /** Israel */
+    /**
+     * Israel
+     */
     IL("Israel", "ISR"),
-    /** Isle of Man */
+    /**
+     * Isle of Man
+     */
     IM("Isle of Man", "IMN"),
-    /** India */
+    /**
+     * India
+     */
     IN("India", "IND"),
-    /** British Indian Ocean Territory */
+    /**
+     * British Indian Ocean Territory
+     */
     IO("British Indian Ocean Territory", "IOT"),
-    /** Iraq */
+    /**
+     * Iraq
+     */
     IQ("Iraq", "IRQ"),
-    /** Islamic Republic of Iran */
+    /**
+     * Islamic Republic of Iran
+     */
     IR("Islamic Republic of Iran", "IRN"),
-    /** Iceland */
+    /**
+     * Iceland
+     */
     IS("Iceland", "ISL"),
-    /** Italy */
+    /**
+     * Italy
+     */
     IT("Italy", "ITA"),
-    /** Jersey */
+    /**
+     * Jersey
+     */
     JE("Jersey", "JEY"),
-    /** Jamaica */
+    /**
+     * Jamaica
+     */
     JM("Jamaica", "JAM"),
-    /** Jordan */
+    /**
+     * Jordan
+     */
     JO("Jordan", "JOR"),
-    /** Japan */
+    /**
+     * Japan
+     */
     JP("Japan", "JPN"),
-    /** Kenya */
+    /**
+     * Kenya
+     */
     KE("Kenya", "KEN"),
-    /** Kyrgyzstan */
+    /**
+     * Kyrgyzstan
+     */
     KG("Kyrgyzstan", "KGZ"),
-    /** Cambodia */
+    /**
+     * Cambodia
+     */
     KH("Cambodia", "KHM"),
-    /** Kiribati */
+    /**
+     * Kiribati
+     */
     KI("Kiribati", "KIR"),
-    /** Comoros */
+    /**
+     * Comoros
+     */
     KM("Comoros", "COM"),
-    /** Saint Kitts and Nevis */
+    /**
+     * Saint Kitts and Nevis
+     */
     KN("Saint Kitts and Nevis", "KNA"),
-    /** Democratic People's Republic of Korea */
+    /**
+     * Democratic People's Republic of Korea
+     */
     KP("Democratic People's Republic of Korea", "PRK"),
-    /** Republic of Korea */
+    /**
+     * Republic of Korea
+     */
     KR("Republic of Korea", "KOR"),
-    /** Kuwait */
+    /**
+     * Kuwait
+     */
     KW("Kuwait", "KWT"),
-    /** Cayman Islands */
+    /**
+     * Cayman Islands
+     */
     KY("Cayman Islands", "CYM"),
-    /** Kazakhstan */
+    /**
+     * Kazakhstan
+     */
     KZ("Kazakhstan", "KAZ"),
-    /** Lao People's Democratic Republic */
+    /**
+     * Lao People's Democratic Republic
+     */
     LA("Lao People's Democratic Republic", "LAO"),
-    /** Lebanon */
+    /**
+     * Lebanon
+     */
     LB("Lebanon", "LBN"),
-    /** Saint Lucia */
+    /**
+     * Saint Lucia
+     */
     LC("Saint Lucia", "LCA"),
-    /** Liechtenstein */
+    /**
+     * Liechtenstein
+     */
     LI("Liechtenstein", "LIE"),
-    /** Sri Lanka */
+    /**
+     * Sri Lanka
+     */
     LK("Sri Lanka", "LKA"),
-    /** Liberia */
+    /**
+     * Liberia
+     */
     LR("Liberia", "LBR"),
-    /** Lesotho */
+    /**
+     * Lesotho
+     */
     LS("Lesotho", "LSO"),
-    /** Lithuania */
+    /**
+     * Lithuania
+     */
     LT("Lithuania", "LTU"),
-    /** Luxembourg */
+    /**
+     * Luxembourg
+     */
     LU("Luxembourg", "LUX"),
-    /** Latvia */
+    /**
+     * Latvia
+     */
     LV("Latvia", "LVA"),
-    /** Libya */
+    /**
+     * Libya
+     */
     LY("Libya", "LBY"),
-    /** Morocco */
+    /**
+     * Morocco
+     */
     MA("Morocco", "MAR"),
-    /** Monaco */
+    /**
+     * Monaco
+     */
     MC("Monaco", "MCO"),
-    /** Republic of Moldova */
+    /**
+     * Republic of Moldova
+     */
     MD("Republic of Moldova", "MDA"),
-    /** Montenegro */
+    /**
+     * Montenegro
+     */
     ME("Montenegro", "MNE"),
-    /** Saint Martin */
+    /**
+     * Saint Martin
+     */
     MF("Saint Martin", "MAF"),
-    /** Madagascar */
+    /**
+     * Madagascar
+     */
     MG("Madagascar", "MDG"),
-    /** Marshall Islands */
+    /**
+     * Marshall Islands
+     */
     MH("Marshall Islands", "MHL"),
-    /** The former Yugoslav Republic of Macedonia */
+    /**
+     * The former Yugoslav Republic of Macedonia
+     */
     MK("The former Yugoslav Republic of Macedonia", "MKD"),
-    /** Mali */
+    /**
+     * Mali
+     */
     ML("Mali", "MLI"),
-    /** Myanmar */
+    /**
+     * Myanmar
+     */
     MM("Myanmar", "MMR"),
-    /** Mongolia */
+    /**
+     * Mongolia
+     */
     MN("Mongolia", "MNG"),
-    /** Macao */
+    /**
+     * Macao
+     */
     MO("Macao", "MAC"),
-    /** Northern Mariana Islands */
+    /**
+     * Northern Mariana Islands
+     */
     MP("Northern Mariana Islands", "MNP"),
-    /** Martinique */
+    /**
+     * Martinique
+     */
     MQ("Martinique", "MTQ"),
-    /** Mauritania */
+    /**
+     * Mauritania
+     */
     MR("Mauritania", "MRT"),
-    /** Montserrat */
+    /**
+     * Montserrat
+     */
     MS("Montserrat", "MSR"),
-    /** Malta */
+    /**
+     * Malta
+     */
     MT("Malta", "MLT"),
-    /** Mauritius */
+    /**
+     * Mauritius
+     */
     MU("Mauritius", "MUS"),
-    /** Maldives */
+    /**
+     * Maldives
+     */
     MV("Maldives", "MDV"),
-    /** Malawi */
+    /**
+     * Malawi
+     */
     MW("Malawi", "MWI"),
-    /** Mexico */
+    /**
+     * Mexico
+     */
     MX("Mexico", "MEX"),
-    /** Malaysia */
+    /**
+     * Malaysia
+     */
     MY("Malaysia", "MYS"),
-    /** Mozambique */
+    /**
+     * Mozambique
+     */
     MZ("Mozambique", "MOZ"),
-    /** Namibia */
+    /**
+     * Namibia
+     */
     NA("Namibia", "NAM"),
-    /** New Caledonia */
+    /**
+     * New Caledonia
+     */
     NC("New Caledonia", "NCL"),
-    /** Niger */
+    /**
+     * Niger
+     */
     NE("Niger", "NER"),
-    /** Norfolk Island */
+    /**
+     * Norfolk Island
+     */
     NF("Norfolk Island", "NFK"),
-    /** Nigeria */
+    /**
+     * Nigeria
+     */
     NG("Nigeria", "NGA"),
-    /** Nicaragua */
+    /**
+     * Nicaragua
+     */
     NI("Nicaragua", "NIC"),
-    /** Netherlands */
+    /**
+     * Netherlands
+     */
     NL("Netherlands", "NLD"),
-    /** Norway */
+    /**
+     * Norway
+     */
     NO("Norway", "NOR"),
-    /** Nepal */
+    /**
+     * Nepal
+     */
     NP("Nepal", "NPL"),
-    /** Nauru */
+    /**
+     * Nauru
+     */
     NR("Nauru", "NRU"),
-    /** Niue */
+    /**
+     * Niue
+     */
     NU("Niue", "NIU"),
-    /** New Zealand */
+    /**
+     * New Zealand
+     */
     NZ("New Zealand", "NZL"),
-    /** Oman */
+    /**
+     * Oman
+     */
     OM("Oman", "OMN"),
-    /** Panama */
+    /**
+     * Panama
+     */
     PA("Panama", "PAN"),
-    /** Peru */
+    /**
+     * Peru
+     */
     PE("Peru", "PER"),
-    /** French Polynesia */
+    /**
+     * French Polynesia
+     */
     PF("French Polynesia", "PYF"),
-    /** Papua New Guinea */
+    /**
+     * Papua New Guinea
+     */
     PG("Papua New Guinea", "PNG"),
-    /** Philippines */
+    /**
+     * Philippines
+     */
     PH("Philippines", "PHL"),
-    /** Pakistan */
+    /**
+     * Pakistan
+     */
     PK("Pakistan", "PAK"),
-    /** Poland */
+    /**
+     * Poland
+     */
     PL("Poland", "POL"),
-    /** Saint Pierre and Miquelon */
+    /**
+     * Saint Pierre and Miquelon
+     */
     PM("Saint Pierre and Miquelon", "SPM"),
-    /** Pitcairn */
+    /**
+     * Pitcairn
+     */
     PN("Pitcairn", "PCN"),
-    /** Puerto Rico */
+    /**
+     * Puerto Rico
+     */
     PR("Puerto Rico", "PRI"),
-    /** Occupied Palestinian Territory */
+    /**
+     * Occupied Palestinian Territory
+     */
     PS("Occupied Palestinian Territory", "PSE"),
-    /** Portugal */
+    /**
+     * Portugal
+     */
     PT("Portugal", "PRT"),
-    /** Palau */
+    /**
+     * Palau
+     */
     PW("Palau", "PLW"),
-    /** Paraguay */
+    /**
+     * Paraguay
+     */
     PY("Paraguay", "PRY"),
-    /** Qatar */
+    /**
+     * Qatar
+     */
     QA("Qatar", "QAT"),
-    /** Réunion */
+    /**
+     * Réunion
+     */
     RE("R\u00E9union", "REU"),
-    /** Romania */
+    /**
+     * Romania
+     */
     RO("Romania", "ROU"),
-    /** Serbia */
+    /**
+     * Serbia
+     */
     RS("Serbia", "SRB"),
-    /** Russian Federation */
+    /**
+     * Russian Federation
+     */
     RU("Russian Federation", "RUS"),
-    /** Rwanda */
+    /**
+     * Rwanda
+     */
     RW("Rwanda", "RWA"),
-    /** Saudi Arabia */
+    /**
+     * Saudi Arabia
+     */
     SA("Saudi Arabia", "SAU"),
-    /** Solomon Islands */
+    /**
+     * Solomon Islands
+     */
     SB("Solomon Islands", "SLB"),
-    /** Seychelles */
+    /**
+     * Seychelles
+     */
     SC("Seychelles", "SYC"),
-    /** Sudan */
+    /**
+     * Sudan
+     */
     SD("Sudan", "SDN"),
-    /** Sweden */
+    /**
+     * Sweden
+     */
     SE("Sweden", "SWE"),
-    /** Singapore */
+    /**
+     * Singapore
+     */
     SG("Singapore", "SGP"),
-    /** Saint Helena, Ascension and Tristan da Cunha */
+    /**
+     * Saint Helena, Ascension and Tristan da Cunha
+     */
     SH("Saint Helena, Ascension and Tristan da Cunha", "SHN"),
-    /** Slovenia */
+    /**
+     * Slovenia
+     */
     SI("Slovenia", "SVN"),
-    /** Svalbard and Jan Mayen */
+    /**
+     * Svalbard and Jan Mayen
+     */
     SJ("Svalbard and Jan Mayen", "SJM"),
-    /** Slovakia */
+    /**
+     * Slovakia
+     */
     SK("Slovakia", "SVK"),
-    /** Sierra Leone */
+    /**
+     * Sierra Leone
+     */
     SL("Sierra Leone", "SLE"),
-    /** San Marino */
+    /**
+     * San Marino
+     */
     SM("San Marino", "SMR"),
-    /** Senegal */
+    /**
+     * Senegal
+     */
     SN("Senegal", "SEN"),
-    /** Somalia */
+    /**
+     * Somalia
+     */
     SO("Somalia", "SOM"),
-    /** Suriname */
+    /**
+     * Suriname
+     */
     SR("Suriname", "SUR"),
-    /** South Sudan */
+    /**
+     * South Sudan
+     */
     SS("South Sudan", "SSD"),
-    /** Sao Tome and Principe */
+    /**
+     * Sao Tome and Principe
+     */
     ST("Sao Tome and Principe", "STP"),
-    /** El Salvador */
+    /**
+     * El Salvador
+     */
     SV("El Salvador", "SLV"),
-    /** Sint Maarten */
+    /**
+     * Sint Maarten
+     */
     SX("Sint Maarten", "SXM"),
-    /** Syrian Arab Republic */
+    /**
+     * Syrian Arab Republic
+     */
     SY("Syrian Arab Republic", "SYR"),
-    /** Swaziland */
+    /**
+     * Swaziland
+     */
     SZ("Swaziland", "SWZ"),
-    /** Turks and Caicos Islands */
+    /**
+     * Turks and Caicos Islands
+     */
     TC("Turks and Caicos Islands", "TCA"),
-    /** Chad */
+    /**
+     * Chad
+     */
     TD("Chad", "TCD"),
-    /** French Southern Territories */
+    /**
+     * French Southern Territories
+     */
     TF("French Southern Territories", "ATF"),
-    /** Togo */
+    /**
+     * Togo
+     */
     TG("Togo", "TGO"),
-    /** Thailand */
+    /**
+     * Thailand
+     */
     TH("Thailand", "THA"),
-    /** Tajikistan */
+    /**
+     * Tajikistan
+     */
     TJ("Tajikistan", "TJK"),
-    /** Tokelau */
+    /**
+     * Tokelau
+     */
     TK("Tokelau", "TKL"),
-    /** Timor-Leste */
+    /**
+     * Timor-Leste
+     */
     TL("Timor-Leste", "TLS"),
-    /** Turkmenistan */
+    /**
+     * Turkmenistan
+     */
     TM("Turkmenistan", "TKM"),
-    /** Tunisia */
+    /**
+     * Tunisia
+     */
     TN("Tunisia", "TUN"),
-    /** Tonga */
+    /**
+     * Tonga
+     */
     TO("Tonga", "TON"),
-    /** Turkey */
+    /**
+     * Turkey
+     */
     TR("Turkey", "TUR"),
-    /** Trinidad and Tobago */
+    /**
+     * Trinidad and Tobago
+     */
     TT("Trinidad and Tobago", "TTO"),
-    /** Tuvalu */
+    /**
+     * Tuvalu
+     */
     TV("Tuvalu", "TUV"),
-    /** Taiwan, Province of China */
+    /**
+     * Taiwan, Province of China
+     */
     TW("Taiwan, Province of China", "TWN"),
-    /** United Republic of Tanzania */
+    /**
+     * United Republic of Tanzania
+     */
     TZ("United Republic of Tanzania", "TZA"),
-    /** Ukraine */
+    /**
+     * Ukraine
+     */
     UA("Ukraine", "UKR"),
-    /** Uganda */
+    /**
+     * Uganda
+     */
     UG("Uganda", "UGA"),
-    /** United States Minor Outlying Islands */
+    /**
+     * United States Minor Outlying Islands
+     */
     UM("United States Minor Outlying Islands", "UMI"),
-    /** United States */
+    /**
+     * United States
+     */
     US("United States", "USA"),
-    /** Uruguay */
+    /**
+     * Uruguay
+     */
     UY("Uruguay", "URY"),
-    /** Uzbekistan */
+    /**
+     * Uzbekistan
+     */
     UZ("Uzbekistan", "UZB"),
-    /** Holy See */
+    /**
+     * Holy See
+     */
     VA("Holy See", "VAT"),
-    /** Saint Vincent and the Grenadines */
+    /**
+     * Saint Vincent and the Grenadines
+     */
     VC("Saint Vincent and the Grenadines", "VCT"),
-    /** Bolivarian Republic of Venezuela */
+    /**
+     * Bolivarian Republic of Venezuela
+     */
     VE("Bolivarian Republic of Venezuela", "VEN"),
-    /** British Virgin Islands */
+    /**
+     * British Virgin Islands
+     */
     VG("British Virgin Islands", "VGB"),
-    /** Virgin Islands, U.S. */
+    /**
+     * Virgin Islands, U.S.
+     */
     VI("Virgin Islands, U.S.", "VIR"),
-    /** Viet Nam */
+    /**
+     * Viet Nam
+     */
     VN("Viet Nam", "VNM"),
-    /** Vanuatu */
+    /**
+     * Vanuatu
+     */
     VU("Vanuatu", "VUT"),
-    /** Wallis and Futuna */
+    /**
+     * Wallis and Futuna
+     */
     WF("Wallis and Futuna", "WLF"),
-    /** Samoa */
+    /**
+     * Samoa
+     */
     WS("Samoa", "WSM"),
-    /** Kosovo (User-assigned code element) */
-    XK("Kosovo", "UNK"), // Note: XK is a user-assigned code, UNK is the assigned alpha-3
-    /** Yemen */
+    /**
+     * Kosovo (User-assigned code element)
+     */
+    // Note: XK is a user-assigned code, UNK is the assigned alpha-3
+    XK("Kosovo", "UNK"),
+    /**
+     * Yemen
+     */
     YE("Yemen", "YEM"),
-    /** Mayotte */
+    /**
+     * Mayotte
+     */
     YT("Mayotte", "MYT"),
-    /** South Africa */
+    /**
+     * South Africa
+     */
     ZA("South Africa", "ZAF"),
-    /** Zambia */
+    /**
+     * Zambia
+     */
     ZM("Zambia", "ZMB"),
-    /** Zimbabwe */
+    /**
+     * Zimbabwe
+     */
     ZW("Zimbabwe", "ZWE");
 
     /**
@@ -570,20 +1071,7 @@ public enum CountryCode {
      * or the input code is {@code null} or has an invalid length.
      */
     public static CountryCode getByCode(final String code) {
-        if (code == null) {
-            return null;
-        }
-
-        switch (code.length()) {
-            case 2:
-                return getByAlpha2Code(code.toUpperCase());
-
-            case 3:
-                return getByAlpha3Code(code.toUpperCase());
-
-            default:
-                return null;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -620,7 +1108,7 @@ public enum CountryCode {
      * @return The country's full name (e.g., "Germany", "United States").
      */
     public String getName() {
-        return name;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -630,7 +1118,7 @@ public enum CountryCode {
      * @return The two-letter ISO 3166-1 alpha-2 code.
      */
     public String getAlpha2() {
-        return name(); // Enum.name() returns the constant's name, which is the alpha-2 code.
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -640,6 +1128,6 @@ public enum CountryCode {
      * @return The three-letter ISO 3166-1 alpha-3 code.
      */
     public String getAlpha3() {
-        return alpha3;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
